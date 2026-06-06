@@ -1,495 +1,153 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatema Akter | Full Stack Java Developer</title>
 
-<title>Fatema Akter | Full Stack Java Developer</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#050816;
-color:white;
-overflow-x:hidden;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-section{
-padding:100px 0;
-}
-
-a{
-text-decoration:none;
-}
-
-ul{
-list-style:none;
-}
-
-h2{
-font-size:42px;
-text-align:center;
-margin-bottom:60px;
-color:#38bdf8;
-}
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:1000;
-background:rgba(5,8,22,.95);
-backdrop-filter:blur(10px);
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 0;
-}
-
-.logo{
-font-size:28px;
-font-weight:700;
-color:#38bdf8;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-}
-
-.nav-links a{
-color:white;
-transition:.3s;
-}
-
-.nav-links a:hover{
-color:#38bdf8;
-}
-
-.hero{
-padding-top:120px;
-padding-bottom:50px;
-}
-
-.hero-content{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
-
-.hero-text h1{
-font-size:65px;
-margin-bottom:15px;
-}
-
-.hero-text span{
-color:#38bdf8;
-}
-
-.hero-text h3{
-font-size:30px;
-margin-bottom:20px;
-color:#38bdf8;
-height:45px;
-}
-
-.hero-text p{
-color:#cbd5e1;
-line-height:1.9;
-margin-bottom:30px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:#2563eb;
-color:white;
-border-radius:12px;
-transition:.3s;
-}
-.hero-buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    margin-top:20px;
-}
-
-.btn-outline{
-    background:transparent;
-    border:2px solid #38bdf8;
-    color:#38bdf8;
-}
-
-.btn-outline:hover{
-    background:#38bdf8;
-    color:#050816;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-.socials{
-display:flex;
-gap:15px;
-margin-top:30px;
-}
-
-.socials a{
-width:50px;
-height:50px;
-background:#111827;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-font-size:18px;
-transition:.3s;
-}
-
-.socials a:hover{
-background:#2563eb;
-}
-
-.profile{
-width:420px;
-height:420px;
-border-radius:50%;
-overflow:hidden;
-border:6px solid #38bdf8;
-box-shadow:0 0 30px rgba(56,189,248,.5);
-margin:auto;
-}
-
-.profile img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-}
-
-.about-grid,
-.skills-grid,
-.projects-grid,
-.contact-grid{
-display:grid;
-gap:25px;
-}
-
-.about-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    margin-top:50px;
-}
-
-.skill-card{
-    background:#111827;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-    transition:.3s;
-    border:1px solid rgba(255,255,255,.05);
-}
-
-.skill-card:hover{
-    transform:translateY(-8px);
-    border-color:#38bdf8;
-    box-shadow:0 0 25px rgba(56,189,248,.2);
-}
-
-.skill-card i{
-    font-size:40px;
-    color:#38bdf8;
-    margin-bottom:15px;
-}
-
-.skill-card h3{
-    margin-bottom:10px;
-    color:white;
-}
-
-.skill-card p{
-    color:#cbd5e1;
-    font-size:14px;
-    line-height:1.6;
-}
-
-@media(max-width:900px){
-    .skills-grid{
-        grid-template-columns:1fr;
-    }
-}
-
-.projects-grid{
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-}
-
-.card{
-background:#111827;
-padding:30px;
-border-radius:20px;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h3{
-margin-bottom:15px;
-color:#38bdf8;
-}
-
-.card p,
-.card li{
-color:#cbd5e1;
-line-height:1.8;
-}
-
-.card li{
-margin-bottom:10px;
-}
-
-.project-links{
-margin-top:20px;
-display:flex;
-gap:20px;
-}
-
-.project-links a{
-color:#38bdf8;
-font-weight:600;
-}
-
-.timeline{
-max-width:900px;
-margin:auto;
-}
-
-.timeline .card{
-margin-bottom:20px;
-}
-
-.contact-grid{
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-}
-
-.contact-box{
-text-align:center;
-}
-
-.contact-box i{
-font-size:35px;
-margin-bottom:15px;
-color:#38bdf8;
-}
-
-footer{
-text-align:center;
-padding:25px;
-background:#020617;
-color:#94a3b8;
-}
-
-.reveal{
-opacity:0;
-transform:translateY(50px);
-transition:all .8s ease;
-}
-
-.show{
-opacity:1;
-transform:translateY(0);
-}
-
-@media(max-width:900px){
-
-.hero-content,
-.about-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero-text h1{
-font-size:45px;
-}
-
-.profile{
-width:280px;
-height:280px;
-font-size:80px;
-}
-
-.nav-links{
-display:none;
-}
-
-}
-
-</style>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
 <header>
-<div class="container">
+    <div class="container">
 
-<nav>
+        <nav>
 
-<div class="logo">Fatema Akter</div>
+            <div class="logo">Fatema Akter</div>
 
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#experience">Experience</a>
-<a href="#education">Education</a>
-<a href="#contact">Contact</a>
-</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
 
-</nav>
+        </nav>
 
-</div>
+    </div>
 </header>
 
 <section class="hero">
 
-<div class="container">
+    <div class="container">
 
-<div class="hero-content">
+        <div class="hero-content">
 
-<div class="hero-text">
+            <div class="hero-text">
 
-<h1>Hi, I'm <span>Fatema Akter</span></h1>
+                <h1>Hi, I'm <span>Fatema Akter</span></h1>
 
-<h3 class="typing"></h3>
+                <h3 class="typing"></h3>
 
-<p>
-Dedicated Full Stack Web Developer specializing in Java, Spring Boot, Hibernate,
-JPA, Angular and PostgreSQL. Passionate about building scalable enterprise
-applications, REST APIs and modern web solutions.
-</p>
+                <p>
+                    Dedicated Full Stack Web Developer specializing in Java,
+                    Spring Boot, Hibernate, JPA, Angular and PostgreSQL.
+                    Passionate about building scalable enterprise applications,
+                    REST APIs and modern web solutions.
+                </p>
 
-<div class="hero-buttons">
+                <div class="hero-buttons">
 
- <a href="./assets/Fatema_Akter_SOFTWARE_developer_final.pdf"
-   target="_blank"
-   class="btn">
-   Download CV
-</a>
+                    <a href="./assets/Fatema_Akter_SOFTWARE_developer_final.pdf"
+                        target="_blank"
+                        class="btn">
+                        View CV
+                    </a>
 
-    <a href="https://github.com/fatemaakter01"
-       target="_blank"
-       class="btn btn-outline">
-       View My Projects
-    </a>
+                    <a href="https://github.com/fatemaakter01"
+                        target="_blank"
+                        class="btn btn-outline">
+                        View My Projects
+                    </a>
 
-</div>
+                </div>
 
-<div class="socials">
+                <div class="socials">
 
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=fatemaaakter1002@gmail.com"
-   target="_blank">
-    <i class="fas fa-envelope"></i>
-</a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fatemaakter1002@gmail.com"
+                        target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
 
-<a href="https://www.linkedin.com/in/fatema-akter10" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
+                    <a href="https://www.linkedin.com/in/fatema-akter10"
+                        target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
 
-<a href="https://github.com/fatemaakter10" target="_blank">
-<i class="fab fa-github"></i>
-</a>
+                    <a href="https://github.com/fatemaakter01"
+                        target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
 
-<a href="tel:+8801604708188">
-<i class="fas fa-phone"></i>
-</a>
+                    <a href="tel:+8801604708188">
+                        <i class="fas fa-phone"></i>
+                    </a>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<div class="profile">
-    <img src="./images/profile.jpg" alt="Fatema Akter">
-</div>
+            <div class="profile">
+                <img src="./images/profile.jpg" alt="Fatema Akter">
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <section id="about" class="reveal">
 
-<div class="container">
+    <div class="container">
 
-<h2>About Me</h2>
+        <h2>About Me</h2>
 
-<div class="about-grid">
+        <div class="about-grid">
 
-<div class="card">
-<h3>Professional Summary</h3>
+            <div class="card">
 
-<p>
-Dedicated and highly motivated Full-Stack Web Developer specializing in
-Java/Spring ecosystem and Angular frontend framework. Experienced in
-building scalable REST APIs using Spring Boot, Hibernate and JPA while
-creating modern responsive user interfaces.
-</p>
+                <h3>Professional Summary</h3>
 
-</div>
+                <p>
+                    Dedicated and highly motivated Full-Stack Web Developer
+                    specializing in Java/Spring ecosystem and Angular frontend
+                    framework. Experienced in building scalable REST APIs using
+                    Spring Boot, Hibernate and JPA while creating modern
+                    responsive user interfaces.
+                </p>
 
-<div class="card">
+            </div>
 
-<h3>Personal Information</h3>
+            <div class="card">
 
-<p>
-📍 Mohammadpur, Dhaka, Bangladesh <br><br>
-📧 fatemaakter1002@gmail.com <br><br>
-📞 01604708188 <br><br>
-💼 Full Stack Java Developer
-</p>
+                <h3>Personal Information</h3>
 
-</div>
+                <p>
+                    📍 Mohammadpur, Dhaka, Bangladesh <br><br>
+                    📧 fatemaakter1002@gmail.com <br><br>
+                    📞 01604708188 <br><br>
+                    💼 Full Stack Java Developer
+                </p>
 
-</div>
+            </div>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
 
@@ -545,224 +203,153 @@ creating modern responsive user interfaces.
 
 <section id="projects" class="reveal">
 
-<div class="container">
+    <div class="container">
 
-<h2>Projects</h2>
+        <h2>Projects</h2>
 
-<div class="projects-grid">
+        <div class="projects-grid">
 
-<div class="card">
+            <div class="card">
 
-<h3>Event Management System</h3>
+                <h3>Event Management System</h3>
 
-<p>
-Full Stack Web Application developed using Spring Boot, Angular,
-PostgreSQL and REST APIs.
-</p>
+                <p>
+                    Full Stack Web Application developed using Spring Boot,
+                    Angular, PostgreSQL and REST APIs.
+                </p>
 
-<div class="project-links">
+                <div class="project-links">
 
-<a href="https://github.com/fatemaakter01/Event-Management-System" target="_blank">
-GitHub
-</a>
+                    <a href="https://github.com/fatemaakter01/Event-Management-System"
+                        target="_blank">
+                        GitHub Repository
+                    </a>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<div class="card">
+            <div class="card">
 
-<h3>Event Management Mobile App</h3>
+                <h3>Event Management Mobile App</h3>
 
-<p>
-Cross-platform Flutter application integrated with Spring Boot
-backend and PostgreSQL database.
-</p>
+                <p>
+                    Cross-platform Flutter application integrated with Spring Boot
+                    backend and PostgreSQL database.
+                </p>
 
-<div class="project-links">
+                <div class="project-links">
 
-<a href="https://github.com/fatemaakter01/flutter-event-management-app" target="_blank">
-GitHub
-</a>
+                    <a href="https://github.com/fatemaakter01/flutter-event-management-app"
+                        target="_blank">
+                        GitHub Repository
+                    </a>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <section id="experience" class="reveal">
 
-<div class="container">
+    <div class="container">
 
-<h2>Experience</h2>
+        <h2>Experience</h2>
 
-<div class="timeline">
+        <div class="timeline">
 
-<div class="card">
-<h3>Teacher</h3>
-<p>Determined Model School</p>
-<p>February 2020 - April 2021</p>
-</div>
+            <div class="card">
+                <h3>Teacher</h3>
+                <p>Determined Model School</p>
+                <p>February 2020 - April 2021</p>
+            </div>
 
-<div class="card">
-<h3>Health Worker</h3>
-<p>Bangladesh Women's Health Coalition</p>
-<p>June 2017 - November 2017</p>
-</div>
+            <div class="card">
+                <h3>Health Worker</h3>
+                <p>Bangladesh Women's Health Coalition</p>
+                <p>June 2017 - November 2017</p>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <section id="education" class="reveal">
 
-<div class="container">
+    <div class="container">
 
-<h2>Education</h2>
+        <h2>Education</h2>
 
-<div class="timeline">
+        <div class="timeline">
 
-<div class="card">
-<h3>Masters of Social Sciences (Economics)</h3>
-<p>University of Dhaka</p>
-<p>2024</p>
-</div>
+            <div class="card">
+                <h3>Masters of Social Sciences (Economics)</h3>
+                <p>University of Dhaka</p>
+                <p>2024</p>
+            </div>
 
-<div class="card">
-<h3>Bachelor of Social Sciences (Economics)</h3>
-<p>University of Dhaka</p>
-<p>2022</p>
-</div>
+            <div class="card">
+                <h3>Bachelor of Social Sciences (Economics)</h3>
+                <p>University of Dhaka</p>
+                <p>2022</p>
+            </div>
 
-<div class="card">
-<h3>IsDB-BISEW IT Scholarship Programme</h3>
-<p>Web & Mobile App Development using Flutter, Spring Boot & PostgreSQL</p>
-</div>
+            <div class="card">
+                <h3>IsDB-BISEW IT Scholarship Programme</h3>
+                <p>Web & Mobile App Development using Flutter, Spring Boot & PostgreSQL</p>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <section id="contact" class="reveal">
 
-<div class="container">
+    <div class="container">
 
-<h2>Contact Me</h2>
+        <h2>Contact Me</h2>
 
-<div class="contact-grid">
+        <div class="contact-grid">
 
-<div class="card contact-box">
-<i class="fas fa-envelope"></i>
-<h3>Email</h3>
-<p>fatemaakter1002@gmail.com</p>
-</div>
+            <div class="card contact-box">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>fatemaaakter1002@gmail.com</p>
+            </div>
 
-<div class="card contact-box">
-<i class="fas fa-phone"></i>
-<h3>Phone</h3>
-<p>01604708188</p>
-</div>
+            <div class="card contact-box">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>01604708188</p>
+            </div>
 
-<div class="card contact-box">
-<i class="fab fa-linkedin"></i>
-<h3>LinkedIn</h3>
-<p>linkedin.com/in/fatema-akter10</p>
-</div>
+            <div class="card contact-box">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/fatema-akter10</p>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <footer>
-<p>© 2026 Fatema Akter | Full Stack Java Developer</p>
+    <p>© 2026 Fatema Akter | Full Stack Java Developer</p>
 </footer>
 
-<script>
-
-const roles = [
-"Full Stack Developer",
-"Java Developer",
-"Spring Boot Developer",
-"Angular Developer"
-];
-
-let roleIndex = 0;
-let charIndex = 0;
-
-const typing = document.querySelector(".typing");
-
-function type(){
-
-if(charIndex < roles[roleIndex].length){
-
-typing.textContent += roles[roleIndex].charAt(charIndex);
-
-charIndex++;
-
-setTimeout(type,100);
-
-}else{
-
-setTimeout(erase,1500);
-
-}
-
-}
-
-function erase(){
-
-if(charIndex > 0){
-
-typing.textContent = roles[roleIndex].substring(0,charIndex-1);
-
-charIndex--;
-
-setTimeout(erase,50);
-
-}else{
-
-roleIndex++;
-
-if(roleIndex >= roles.length){
-roleIndex = 0;
-}
-
-setTimeout(type,300);
-
-}
-
-}
-
-type();
-
-const observer = new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-
-});
-
-},{threshold:.2});
-
-document.querySelectorAll(".reveal").forEach(el=>{
-observer.observe(el);
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
+

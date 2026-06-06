@@ -1,36 +1,74 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Mobile Responsive Navbar Selectors
-    const navToggle = document.getElementById("nav-toggle");
-    const navLinksContainer = document.getElementById("nav-links");
-    const navLinks = document.querySelectorAll(".nav-links a");
+const roles = [
+    "Full Stack Developer",
+    "Java Developer",
+    "Spring Boot Developer",
+    "Angular Developer"
+];
 
-    // Toggle menu state interface
-    if (navToggle && navLinksContainer) {
-        navToggle.addEventListener("click", () => {
-            navLinksContainer.classList.toggle("active");
-        });
+let roleIndex = 0;
+let charIndex = 0;
+
+const typing = document.querySelector(".typing");
+
+function type() {
+
+    if (charIndex < roles[roleIndex].length) {
+
+        typing.textContent += roles[roleIndex].charAt(charIndex);
+
+        charIndex++;
+
+        setTimeout(type, 100);
+
+    } else {
+
+        setTimeout(erase, 1500);
+
     }
+}
 
-    // Auto close expanded wrapper upon user target navigation selection
-    navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            if (navLinksContainer && navLinksContainer.classList.contains("active")) {
-                navLinksContainer.classList.remove("active");
-            }
-        });
-    });
+function erase() {
 
-    // Sub-routine logic to dynamic compress header sizing upon window tracking stream
-    window.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".navbar");
-        if (navbar) {
-            if (window.scrollY > 50) {
-                navbar.style.padding = "10px 0";
-                navbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.3)";
-            } else {
-                navbar.style.padding = "15px 0";
-                navbar.style.boxShadow = "none";
-            }
+    if (charIndex > 0) {
+
+        typing.textContent =
+            roles[roleIndex].substring(0, charIndex - 1);
+
+        charIndex--;
+
+        setTimeout(erase, 50);
+
+    } else {
+
+        roleIndex++;
+
+        if (roleIndex >= roles.length) {
+            roleIndex = 0;
         }
-    });
+
+        setTimeout(type, 300);
+    }
+}
+
+type();
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.2
+    }
+);
+
+document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
 });
